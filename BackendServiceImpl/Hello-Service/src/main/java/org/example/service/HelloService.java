@@ -29,8 +29,15 @@ import javax.ws.rs.Path;
  *
  * @since 0.1-SNAPSHOT
  */
-@Path("/")
+@Path("/hello")
 public class HelloService {
+	
+	@GET
+	@Path("/name")
+	public String hello(@PathParam("name") String name)
+	{
+		return "Hello"+name;
+	}
 
     @GET
     @Path("/")
